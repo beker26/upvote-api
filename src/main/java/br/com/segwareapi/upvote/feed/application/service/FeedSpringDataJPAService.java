@@ -27,7 +27,7 @@ public class FeedSpringDataJPAService implements FeedService {
 
 	@Override
 	public Feed adicionaPost(Feed feed) {
-		log.info("[Inicia] CidadaoSpringDataJPAService - preCadastraCidadao");
+		log.info("[Inicia] FeedSpringDataJPAService - preCadastraCidadao");
 		Feed salvaFeed = salvaFeed(feed);
 		log.info("[Finaliza] CidadaoSpringDataJPAService - preCadastraCidadao");
 		return salvaFeed;
@@ -40,11 +40,11 @@ public class FeedSpringDataJPAService implements FeedService {
 
 	@Override
 	public Feed liked(Integer id) {
-		log.info("[Inicia] CidadaoSpringDataJPAService - liked");
+		log.info("[Inicia] FeedSpringDataJPAService - liked");
 		Feed findByidFeed = feedRepository.findById(id);
 		likedPost(findByidFeed);
 		Feed salvaFeed = salvaFeed(findByidFeed);
-		log.info("[Finaliza] CidadaoSpringDataJPAService - liked");
+		log.info("[Finaliza] FeedSpringDataJPAService - liked");
 		return salvaFeed;
 	}
 

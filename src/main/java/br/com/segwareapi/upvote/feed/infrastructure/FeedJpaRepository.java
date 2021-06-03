@@ -37,6 +37,7 @@ public class FeedJpaRepository implements FeedRepository {
 	public Feed findById(Integer id) {
 		log.info("[Inicia] FeedJpaRepository - findById");
 		Feed feedId = feedSpringDataJPARepository.findById(id).orElseThrow(() -> new RuntimeException("O Post não existe"));;
+		log.info("[Finaliza] FeedJpaRepository - findById");
 		return feedId;
 	}
 
