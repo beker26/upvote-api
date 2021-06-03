@@ -1,13 +1,14 @@
 package br.com.segwareapi.upvote.feed.application.repository;
 
-import java.util.UUID;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
 import br.com.segwareapi.upvote.feed.domain.Feed;
 
-@Repository
-public interface FeedRepository extends JpaRepository<Feed, UUID> {
+public interface FeedRepository {
 
+	Feed save(Feed feed);
+
+	List<Feed> findAll();
+
+	Feed findById(Integer id);
 }

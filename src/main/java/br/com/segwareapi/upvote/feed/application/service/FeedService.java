@@ -8,4 +8,9 @@ public interface FeedService {
 
 	public List<Feed> findAll();
 
+	public Feed adicionaPost(Feed feed);
+
+	public Feed liked(Integer id);
+
+
 }

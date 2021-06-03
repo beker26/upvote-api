@@ -1,27 +1,34 @@
 package br.com.segwareapi.upvote.feed.domain;
 
-import java.util.List;
-import java.util.UUID;
+import java.time.LocalDateTime;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Builder.Default;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Builder
 @Getter
+@Setter
 public class Feed {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private UUID id;
+	private Integer id;
 	private String text;
-	@OneToMany
-	private List<Reaction> reaction;
+	private LocalDateTime createdAt;
+	@Default
+	private Integer reactions = 0;
 
 }
